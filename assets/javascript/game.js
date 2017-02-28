@@ -1,4 +1,4 @@
-var dictionary = ["HELLO", "BYE"];
+var dictionary = ["GERMANY", "AMERICA", "BRITAIN", "FRANCE", "ITALY"];
 var blanks = " ";
 var guesses = [];
 var guessesRemaining = 12;
@@ -6,13 +6,21 @@ var guess;
 var answer = [];
 var isCompleted;
 var score = 0;
+var song = "";
+var prevSong = "";
 
 var word = setNewWord();
 setAnswerArray();
 
 document.onkeyup = function(event) {
+    var valid = validateGuess(event.which);
+    if (!valid) {
+        console.log("Invalid key typed" + event.key);
+        return;
+    }
     guess = event.key.toUpperCase();
-    validateGuess();
+    console.log("Valid key typed" + guess);
+
     if (guessesRemaining >= 1) {
         if (guesses.indexOf(guess) == -1) {
             guesses.push(guess);
@@ -26,7 +34,7 @@ document.onkeyup = function(event) {
                     score++;
                     document.querySelector("#wins").innerHTML = score;
                     document.querySelector("#result").innerHTML = "yaay u won !!";
-
+                    play();
                     reset();
 
                 }
@@ -37,6 +45,7 @@ document.onkeyup = function(event) {
         }
     } else {
         document.querySelector("#result").innerHTML = "Oh u lost!! Better try this time";
+        console.log("lost !");
         reset();
 
 
@@ -48,7 +57,11 @@ document.onkeyup = function(event) {
 }
 
 
-function validateGuess() {
+function validateGuess(charCode) {
+    if ((charCode > 64 && charCode < 91) || (charCode > 96 && charCode < 123)) {
+        return true;
+    } else
+        return false;
 
 }
 
@@ -105,4 +118,31 @@ function ifWon() {
     if (answer.indexOf("_") == -1) {
         return true;
     }
+}
+
+
+function play() {
+    if (prevSong != "") {
+        prevSong.pause();
+
+    }
+    song = new Audio("assets/songs/" + word + ".mp3");
+    song.currentTime = 0;
+    song.play();
+    song.volume = 0.2;
+    prevSong = song;
+    document.querySelector("#flag").src = "assets/images/" + word + ".png";
+}
+
+
+document.onkeydown = function(event) {
+    if (prevSong != "" && prevSong.volume > 0 && prevSong.volume < 1) {
+        if (event.keyCode == 40) {
+            prevSong.volume = prevSong.volume - 0.05;
+        } else if (event.keyCode == 38) {
+            prevSong.volume = prevSong.volume + 0.05;
+
+        }
+    }
+
 }
