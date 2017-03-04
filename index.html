@@ -3,23 +3,51 @@
 
 <head>
     <title>HangMan</title>
+    <link rel="icon" sizes="57x57" href="assets/images/hangman.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Rock+Salt" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Rock+Salt" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lakki+Reddy|Permanent+Marker|Rock+Salt" rel="stylesheet">
 </head>
 
-<body>
-    <div class="container">
-        <p>Press any key to get started !!!!</p>
-        <p>Wins : </p>
-        <p id="wins"> 0 </p>
-        <p>Current Word :</p>
-        <p id="currentWord"></p>
-        <p>Guesses remaining :</p>
-        <p id="guessesRemaining"> 12 </p>
-        <p>Letters guessed already</p>
-        <p id="guesses"></p>
-        <p id="result"></p>
-
-        <div>
-            <img id="flag" src="">
+<body id="wrap">
+    <nav class="navbar navbar-default text-center">
+        <div class="container top">
+            <div class="navbar-header ">
+                <!--  <a class="navbar-brand" href="#">
+                   <img class = "img-fluid" alt="Brand" src="assets/images/hangman-nav.png" ></a> -->
+                <h1>HangMan - Know the world</h1>
+            </div>
+        </div>
+    </nav>
+    <div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <p>Press any key to get started !!!!</p>
+                    <p>Wins : </p>
+                    <p id="wins"> 0 </p>
+                    <p>Loses : </p>
+                    <p id="loses"> 0 </p>
+                    <p>Current Word :</p>
+                    <p class="writing" id="currentWord"></p>
+                    <p>Guesses remaining :</p>
+                    <p id="guessesRemaining"> 12 </p>
+                    <p>Letters guessed already :</p>
+                    <p class="writing" id="guesses"></p>
+                    <p id="result"> </p>
+                </div>
+                <div class="col-sm-2">
+                    <img id="man" src="assets/images/man/hang_12.gif">
+                </div>
+                <div class="col-sm-6">
+                    <img id="flag" src="">
+                    <h1 id="country" class="text-center"></h1>
+                    <p id="help"> </p>
+                </div>
+            </div>
         </div>
     </div>
     <script type="text/javascript" src="assets/javascript/game.js"></script>
