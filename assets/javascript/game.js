@@ -1,4 +1,4 @@
-var dictionary = ["GERMANY", "AMERICA", "BRITAIN", "FRANCE", "ITALY"];
+var dictionary = ["GERMANY", "UNITED STATES OF AMERICA", "BRITAIN", "FRANCE", "ITALY"];
 var blanks = " ";
 var guessArr = [];
 var guessesRemaining = 12;
