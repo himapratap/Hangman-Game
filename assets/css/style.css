@@ -1,6 +1,6 @@
 h1,
 .writing {
-    /* 	font-family: 'Rock Salt', cursive;
+    /*  font-family: 'Rock Salt', cursive;
  */
     font-family: 'Rock Salt', cursive;
     font-family: 'Permanent Marker', cursive;
@@ -9,9 +9,9 @@ h1,
 
 h1 {
     font-size: 36px;
-    padding:30px 15px;
+    padding: 30px 15px;
     color: white;
-    margin:0 auto;
+    margin: 0 auto;
 }
 
 p {
@@ -22,21 +22,28 @@ p {
     color: #3B5998;
 }
 
+#country {
+    color: #3B5998;
+}
 
 body {
     background-image: url('../images/map.svg');
 }
 
-.content{
-	padding-top : 30px;
+.content {
+    padding-top: 30px;
 }
 
-
-.man-pic{
-	padding-top: 120px;
+.man-pic {
+    padding-top: 120px;
 }
+
 .nav-bar,
 .top {
     text-align: center;
     background-color: #3B5998;
+}
+
+.aside{
+    padding : 20px;
 }

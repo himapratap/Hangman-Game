@@ -1,4 +1,4 @@
-var dictionary = ["GERMANY", "UNITED STATES OF AMERICA", "BRITAIN", "FRANCE", "ITALY"];
+var dictionary = ["GERMANY", "UNITED STATES OF AMERICA", "BRITAIN", "FRANCE", "ITALY", "INDIA"];
 var blanks = " ";
 var guessArr = [];
 var guessesRemaining = 12;
@@ -74,11 +74,11 @@ function updateAndSetScore() {
 }
 
 function setFlag() {
-    document.querySelector("#country").innerHTML = computerGuess; //--guessesRemaining;
-    document.querySelector("#help").innerHTML = "Press &uarr\;, &darr\; keys to increase / decrease sound"; //--guessesRemaining;
 
     document.querySelector("#flag").src = "assets/images/" + computerGuess + ".png";
-
+    document.querySelector("#country").innerHTML = computerGuess;
+    document.querySelector("#help").innerHTML = "Press &uarr\;, &darr\; keys to increase / decrease sound";
+    document.querySelector(".aside").style.backgroundColor = "white";
 
 }
 
